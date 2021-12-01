@@ -1,0 +1,192 @@
+<MDRectangleFlatButton>
+    font_size: 42
+
+<Label>
+    multiline: True
+    text_size: self.size
+    font_size: 72
+    color: 178/255,103/255,47/255,1
+
+
+
+<MyLayout>
+    BoxLayout:
+        orientation: 'vertical'
+        size: root.width, root.height
+        padding: 6
+        spacing: 3
+
+
+        GridLayout:
+            cols: 2
+            size_hint: 1, 0.45
+
+            Label:
+                id: history_left
+                text: ''
+                bold: True
+                font_name: 'OpenSans-CondLight.ttf'
+                size_hint: 0.6, 1
+                halign: 'left'
+
+            Label:
+                id: history_right
+                text: ''
+                bold: True
+                font_name: 'OpenSans-CondLight.ttf'
+                size_hint: 0.4, 1
+                halign: 'right'
+
+
+#        MDTextFieldRect:
+        TextInput:
+            id: calc_input
+            #input_type: 'number'
+            input_filter: 'int'
+            multiline: False
+            text: '0'
+            text_size: self.size
+            halign: 'right'
+            valign: 'middle'
+            font_size: 82
+            bold: True
+            font_name: 'OpenSans-CondLight.ttf'
+            size_hint: 1, 0.1
+            foreground_color: 1,109/255,0,1
+            background_color: 48/255,48/255,48/255,1
+            pos_hint: {'x': 0, 'y': 0.8}
+
+        GridLayout:
+            cols: 4
+            rows: 4
+            size_hint: 1, 0.3
+            spacing: 3
+
+            MDRectangleFlatButton:
+                text: 'ce'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.clear_history()
+            MDRectangleFlatButton:
+                text: 'c'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.clear()
+            MDRectangleFlatButton:
+                text: '^'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.undo()
+            MDRectangleFlatButton:
+                text: '<<'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.erase()
+            MDRectangleFlatButton:
+                text: '('
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('(')
+            MDRectangleFlatButton:
+                text: ')'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.button_press(')')
+            MDRectangleFlatButton:
+                text: '/'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('/')
+            MDRectangleFlatButton:
+                text: '*'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('*')
+            MDRectangleFlatButton:
+                text: '7'
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('7')
+            MDRectangleFlatButton:
+                text: '8'
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('8')
+            MDRectangleFlatButton:
+                text: '9'
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('9')
+            MDRectangleFlatButton:
+                text: '-'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('-')
+            MDRectangleFlatButton:
+                text: '4'
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('4')
+            MDRectangleFlatButton:
+                text: '5'
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('5')
+            MDRectangleFlatButton:
+                text: '6'
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('6')
+            MDRectangleFlatButton:
+                text: '+'
+                theme_text_color: "Custom"
+                text_color: 190/255, 0, 0, 1
+                size_hint: 0.25, 0.3
+                on_press: root.button_press('+')
+
+
+        GridLayout:
+            cols: 2
+            size_hint: 1, 0.15
+            spacing: 3
+
+            GridLayout:
+                cols: 3
+                rows: 2
+                size_hint: 0.75, 1
+                spacing: 3
+
+                MDRectangleFlatButton:
+                    text: '1'
+                    size_hint: 0.25, 0.5
+                    on_press: root.button_press('1')
+                MDRectangleFlatButton:
+                    text: '2'
+                    size_hint: 0.25, 0.5
+                    on_press: root.button_press('2')
+                MDRectangleFlatButton:
+                    text: '3'
+                    size_hint: 0.25, 0.5
+                    on_press: root.button_press('3')
+                MDRectangleFlatButton:
+                    text: ''
+                    size_hint: 0.25, 0.5
+                MDRectangleFlatButton:
+                    text: '0'
+                    size_hint: 0.25, 0.5
+                    on_press: root.button_press('0')
+                MDRectangleFlatButton:
+                    text: '.'
+                    size_hint: 0.25, 0.5
+                    on_press: root.button_press('.')
+
+            MDRectangleFlatButton:
+                text: '='
+                font_size: 80
+                size_hint: 0.249, 1
+                theme_text_color: "Custom"
+                text_color: 0, 160/255, 0, 1
+                on_press: root.equals()
